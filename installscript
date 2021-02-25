@@ -20,14 +20,23 @@ sudo pip install webtech
 sudo pip install -r requirements.txt
 		
 #if go version < 1.13.4, then it was possible to amass failed with string.replaceAll function error so replaced with latest version
+#mkdir ExtTool && cd ExtTool
+#rm -rf go-*
+#wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
+#tar -xvf go1.13.4.linux-amd64.tar.gz
+#sudo mkdir /usr/lib/go-1.13.4
+#sudo cp -R go/* /usr/lib/go-1.13.4/
+#sudo rm /usr/bin/go
+#sudo ln -s /usr/lib/go-1.13.4/bin/go /usr/bin
+
 mkdir ExtTool && cd ExtTool
 rm -rf go-*
-wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
-tar -xvf go1.13.4.linux-amd64.tar.gz
-sudo mkdir /usr/lib/go-1.13.4
-sudo cp -R go/* /usr/lib/go-1.13.4/
+wget https://dl.google.com/go/go1.16.linux-amd64.tar.gz
+tar -xvf go1.16.linux-amd64.tar.gz
+sudo mkdir /usr/lib/go-1.16
+sudo cp -R go/* /usr/lib/go-1.16/
 sudo rm /usr/bin/go
-sudo ln -s /usr/lib/go-1.13.4/bin/go /usr/bin
+sudo ln -s /usr/lib/go-1.16/bin/go /usr/bin
 
 cd $currentDir
 export GOPATH=$(go env | grep "GOPATH" | cut -d"\"" -f2)
